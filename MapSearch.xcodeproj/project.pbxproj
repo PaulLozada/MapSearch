@@ -14,6 +14,7 @@
 		33184ABF1C73B6020034F8E5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 33184ABD1C73B6020034F8E5 /* LaunchScreen.storyboard */; };
 		33184ACA1C73B6020034F8E5 /* MapSearchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33184AC91C73B6020034F8E5 /* MapSearchTests.swift */; };
 		33184AD51C73B6020034F8E5 /* MapSearchUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33184AD41C73B6020034F8E5 /* MapSearchUITests.swift */; };
+		33184AE31C73B6320034F8E5 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33184AE21C73B6320034F8E5 /* MapKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		33184AD01C73B6020034F8E5 /* MapSearchUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MapSearchUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		33184AD41C73B6020034F8E5 /* MapSearchUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapSearchUITests.swift; sourceTree = "<group>"; };
 		33184AD61C73B6020034F8E5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		33184AE21C73B6320034F8E5 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +56,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				33184AE31C73B6320034F8E5 /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -77,6 +80,7 @@
 		33184AA81C73B6020034F8E5 = {
 			isa = PBXGroup;
 			children = (
+				33184AE21C73B6320034F8E5 /* MapKit.framework */,
 				33184AB31C73B6020034F8E5 /* MapSearch */,
 				33184AC81C73B6020034F8E5 /* MapSearchTests */,
 				33184AD31C73B6020034F8E5 /* MapSearchUITests */,
@@ -193,6 +197,11 @@
 				TargetAttributes = {
 					33184AB01C73B6020034F8E5 = {
 						CreatedOnToolsVersion = 7.3;
+						SystemCapabilities = {
+							com.apple.Maps.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 					33184AC41C73B6020034F8E5 = {
 						CreatedOnToolsVersion = 7.3;

@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10109" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10083"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="MapSearch" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -15,11 +16,66 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Wgz-04-gZA">
+                                <rect key="frame" x="0.0" y="20" width="600" height="580"/>
+                            </mapView>
+                            <searchBar contentMode="redraw" placeholder="Enter Search Results Here" translatesAutoresizingMaskIntoConstraints="NO" id="Z4U-5L-Uzp">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="Vci-L8-jBM"/>
+                                </connections>
+                            </searchBar>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Z4U-5L-Uzp" firstAttribute="top" secondItem="Wgz-04-gZA" secondAttribute="top" id="6k8-fb-Sfz"/>
+                            <constraint firstItem="Wgz-04-gZA" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="AW5-vG-CRa"/>
+                            <constraint firstItem="Wgz-04-gZA" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="BYZ-x1-Kg5"/>
+                            <constraint firstItem="Wgz-04-gZA" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="OET-gu-BJH"/>
+                            <constraint firstAttribute="trailing" secondItem="Wgz-04-gZA" secondAttribute="trailing" id="SZF-cN-m3I"/>
+                            <constraint firstItem="Z4U-5L-Uzp" firstAttribute="leading" secondItem="Wgz-04-gZA" secondAttribute="leading" id="eXp-T6-VZa"/>
+                            <constraint firstItem="Z4U-5L-Uzp" firstAttribute="trailing" secondItem="Wgz-04-gZA" secondAttribute="trailing" id="ffi-hK-KUR"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="Z4U-5L-Uzp"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="6k8-fb-Sfz"/>
+                                <exclude reference="eXp-T6-VZa"/>
+                                <exclude reference="ffi-hK-KUR"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="Z4U-5L-Uzp"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="6k8-fb-Sfz"/>
+                                <include reference="eXp-T6-VZa"/>
+                                <include reference="ffi-hK-KUR"/>
+                            </mask>
+                        </variation>
                     </view>
+                    <connections>
+                        <outlet property="mainMapView" destination="Wgz-04-gZA" id="an9-1c-zWQ"/>
+                        <outlet property="searchBarOutlet" destination="Z4U-5L-Uzp" id="PTY-lt-5U2"/>
+                        <outlet property="searchDisplayController" destination="Zvk-Pz-H8A" id="471-jh-EXp"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <searchDisplayController id="Zvk-Pz-H8A">
+                    <connections>
+                        <outlet property="delegate" destination="BYZ-38-t0r" id="wxW-6R-ZT9"/>
+                        <outlet property="searchContentsController" destination="BYZ-38-t0r" id="IJP-w8-ZCq"/>
+                        <outlet property="searchResultsDataSource" destination="BYZ-38-t0r" id="c8l-6M-ayA"/>
+                        <outlet property="searchResultsDelegate" destination="BYZ-38-t0r" id="pTd-8l-C0v"/>
+                    </connections>
+                </searchDisplayController>
             </objects>
+            <point key="canvasLocation" x="305" y="429"/>
         </scene>
     </scenes>
 </document>
