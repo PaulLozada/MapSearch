@@ -15,6 +15,10 @@ class ViewController: UIViewController,UISearchBarDelegate,MKMapViewDelegate, UI
     @IBOutlet weak var mainMapView: MKMapView!
     @IBOutlet weak var searchBarOutlet: UISearchBar!
     
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        self.view.endEditing(true)
+    }
+    
     func searchBarSearchButtonClicked(searchBar: UISearchBar) {
         let localSearchRequest = MKLocalSearchRequest()
         localSearchRequest.naturalLanguageQuery = searchBar.text
@@ -57,6 +61,7 @@ class ViewController: UIViewController,UISearchBarDelegate,MKMapViewDelegate, UI
     
     func searchBarCancelButtonClicked(searchBar: UISearchBar) {
         self.view.endEditing(true)
+        self.searchBarOutlet.text = ""
     }
     override func viewDidLoad() {
         

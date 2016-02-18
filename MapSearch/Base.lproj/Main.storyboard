@@ -30,6 +30,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="Z4U-5L-Uzp" firstAttribute="leading" secondItem="Wgz-04-gZA" secondAttribute="leading" id="0Mo-0B-AMH"/>
                             <constraint firstItem="Z4U-5L-Uzp" firstAttribute="top" secondItem="Wgz-04-gZA" secondAttribute="top" id="6k8-fb-Sfz"/>
                             <constraint firstItem="Wgz-04-gZA" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="AW5-vG-CRa"/>
                             <constraint firstItem="Wgz-04-gZA" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="BYZ-x1-Kg5"/>
@@ -37,15 +38,24 @@
                             <constraint firstAttribute="trailing" secondItem="Wgz-04-gZA" secondAttribute="trailing" id="SZF-cN-m3I"/>
                             <constraint firstItem="Z4U-5L-Uzp" firstAttribute="leading" secondItem="Wgz-04-gZA" secondAttribute="leading" id="eXp-T6-VZa"/>
                             <constraint firstItem="Z4U-5L-Uzp" firstAttribute="trailing" secondItem="Wgz-04-gZA" secondAttribute="trailing" id="ffi-hK-KUR"/>
+                            <constraint firstItem="Z4U-5L-Uzp" firstAttribute="trailing" secondItem="Wgz-04-gZA" secondAttribute="trailing" id="tc3-6d-aOG"/>
+                            <constraint firstItem="Z4U-5L-Uzp" firstAttribute="top" secondItem="Wgz-04-gZA" secondAttribute="top" id="yjD-8j-PKl"/>
                         </constraints>
                         <variation key="default">
-                            <mask key="subviews">
-                                <exclude reference="Z4U-5L-Uzp"/>
-                            </mask>
                             <mask key="constraints">
+                                <exclude reference="0Mo-0B-AMH"/>
                                 <exclude reference="6k8-fb-Sfz"/>
                                 <exclude reference="eXp-T6-VZa"/>
                                 <exclude reference="ffi-hK-KUR"/>
+                                <exclude reference="tc3-6d-aOG"/>
+                                <exclude reference="yjD-8j-PKl"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="constraints">
+                                <include reference="0Mo-0B-AMH"/>
+                                <include reference="tc3-6d-aOG"/>
+                                <include reference="yjD-8j-PKl"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
@@ -75,7 +85,7 @@
                     </connections>
                 </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="305" y="429"/>
+            <point key="canvasLocation" x="304.5" y="429"/>
         </scene>
     </scenes>
 </document>

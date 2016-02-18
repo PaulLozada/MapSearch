@@ -493,6 +493,7 @@
 				33184ADB1C73B6020034F8E5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		33184ADC1C73B6020034F8E5 /* Build configuration list for PBXNativeTarget "MapSearchTests" */ = {
 			isa = XCConfigurationList;
@@ -501,6 +502,7 @@
 				33184ADE1C73B6020034F8E5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		33184ADF1C73B6020034F8E5 /* Build configuration list for PBXNativeTarget "MapSearchUITests" */ = {
 			isa = XCConfigurationList;
@@ -509,6 +511,7 @@
 				33184AE11C73B6020034F8E5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
