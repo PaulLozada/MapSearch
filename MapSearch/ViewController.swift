@@ -20,21 +20,20 @@ class ViewController: UIViewController,UISearchBarDelegate,MKMapViewDelegate, UI
         localSearchRequest.naturalLanguageQuery = searchBar.text
         let search = MKLocalSearch(request: localSearchRequest)
         search.startWithCompletionHandler { response, error in
-
-            if error == nil {
+            
+            if response == nil {
                 let alert = UIAlertController(title: "Search Failed", message: "No results found. Try another search.", preferredStyle: .Alert)
                 let action = UIAlertAction(title: "Okay", style: .Default, handler: nil)
                 alert.addAction(action)
                 self.presentViewController(alert, animated: true, completion: nil)
-            }
-            
-            let items = response!.mapItems
-            
-            for item in items {
-                print(item)
+            } else {
+                let items = response!.mapItems
                 
+                for item in items {
+                    print(item)
+                    
+                }
             }
-
         }
     }
     
