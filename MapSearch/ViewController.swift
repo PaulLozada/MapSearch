@@ -15,6 +15,14 @@ class ViewController: UIViewController,UISearchBarDelegate,MKMapViewDelegate, UI
     @IBOutlet weak var mainMapView: MKMapView!
     @IBOutlet weak var searchBarOutlet: UISearchBar!
     
+    var mapItem = [MKMapItem]()
+    
+    let regionRadius: CLLocationDistance = 1000
+    func centerMapOnLocation(location: CLLocation) {
+        let coordinateRegion = MKCoordinateRegionMakeWithDistance(location.coordinate,
+        regionRadius * 2.0, regionRadius * 2.0)
+        self.mainMapView.setRegion(coordinateRegion, animated: true)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,7 +33,26 @@ class ViewController: UIViewController,UISearchBarDelegate,MKMapViewDelegate, UI
         self.view.endEditing(true)
     }
     
+    func mapView(mapView: MKMapView, viewForAnnotation annotation: MKAnnotation) -> MKAnnotationView? {
+        let annotationView = MKPinAnnotationView()
+        annotationView.canShowCallout = true
+        annotationView.animatesDrop = true
+        annotationView.pinTintColor = UIColor(red:0.046, green:0.741, blue:1, alpha:1)
+        annotationView.leftCalloutAccessoryView = UIButton(type: UIButtonType.InfoDark)
+        annotationView.rightCalloutAccessoryView = UIButton(type: UIButtonType.InfoLight)
+        return annotationView
+    }
  
+    func mapView(mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
+        
+        switch control {
+        case view.leftCalloutAccessoryView!:
+            MKMapItem.openMapsWithItems(mapItem, launchOptions: [MKLaunchOptionsDirectionsModeKey:MKLaunchOptionsDirectionsModeDriving])
+        default:
+            print("right callout")
+        }
+        
+    }
     
     func searchBarSearchButtonClicked(searchBar: UISearchBar) {
         
@@ -42,7 +69,13 @@ class ViewController: UIViewController,UISearchBarDelegate,MKMapViewDelegate, UI
                 let items = response!.mapItems
                 for item in items {
                     let annotation = MapAnnotations(coordinate: item.placemark.coordinate, title:  item.placemark.name, subtitle: item.phoneNumber)
+                    
+                    let initialLocation = CLLocation(latitude: item.placemark.coordinate.latitude, longitude: item.placemark.coordinate.longitude)
+                    
+                    self.centerMapOnLocation(initialLocation)
+                    self.mapItem.append(item)
                     self.mainMapView.addAnnotation(annotation)
+                    self.mainMapView.selectAnnotation(annotation, animated: true)
                 }
             }
         }
@@ -54,8 +87,6 @@ class ViewController: UIViewController,UISearchBarDelegate,MKMapViewDelegate, UI
         } else{
             searchBarOutlet.showsCancelButton = true
         }
-        print(searchText)
-        
     }
     
     func searchBarResultsListButtonClicked(searchBar: UISearchBar) {
