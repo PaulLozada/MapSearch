@@ -15,6 +15,7 @@
 		33184ACA1C73B6020034F8E5 /* MapSearchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33184AC91C73B6020034F8E5 /* MapSearchTests.swift */; };
 		33184AD51C73B6020034F8E5 /* MapSearchUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33184AD41C73B6020034F8E5 /* MapSearchUITests.swift */; };
 		33184AE31C73B6320034F8E5 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33184AE21C73B6320034F8E5 /* MapKit.framework */; };
+		33599FE41C76925B00F79844 /* MapAnnotations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33599FE31C76925B00F79844 /* MapAnnotations.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		33184AD41C73B6020034F8E5 /* MapSearchUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapSearchUITests.swift; sourceTree = "<group>"; };
 		33184AD61C73B6020034F8E5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		33184AE21C73B6320034F8E5 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		33599FE31C76925B00F79844 /* MapAnnotations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapAnnotations.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +105,7 @@
 			children = (
 				33184AB41C73B6020034F8E5 /* AppDelegate.swift */,
 				33184AB61C73B6020034F8E5 /* ViewController.swift */,
+				33599FE31C76925B00F79844 /* MapAnnotations.swift */,
 				33184AB81C73B6020034F8E5 /* Main.storyboard */,
 				33184ABB1C73B6020034F8E5 /* Assets.xcassets */,
 				33184ABD1C73B6020034F8E5 /* LaunchScreen.storyboard */,
@@ -265,6 +268,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				33599FE41C76925B00F79844 /* MapAnnotations.swift in Sources */,
 				33184AB71C73B6020034F8E5 /* ViewController.swift in Sources */,
 				33184AB51C73B6020034F8E5 /* AppDelegate.swift in Sources */,
 			);
